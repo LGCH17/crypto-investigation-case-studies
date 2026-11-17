@@ -42,16 +42,6 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 
 *Representative edges shown; full hop log in [bybit_trace.csv](bybit_trace.csv). Built in MetaSleuth; times in UTC.*
 
-| Hop | From | To | Asset | Amount | Time (UTC) | What happened |
-|---|---|---|---|---|---|---|
-| 1 | | | | | | |
-
-**Patterns observed:**
-- **Splitting:** [ ]
-- **Speed:** [ ]
-- **Conversion:** [ ]
-- **Exchange touchpoints:** [ ]
-
 ## 5. Attribution assessment
 | Claim | Who says it | Supported by my trace? | Confidence |
 |---|---|---|---|
