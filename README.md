@@ -1,8 +1,8 @@
 # Tracing a Slice of the Bybit Hack Funds: An Open-Source Investigation
 
-*Author: Linda Gicheru · Date: [November 2026] · Status: [Final]*
+*Author: Linda Gicheru · Date: [17th November 2026] · Status: [Final]*
 
-> Open-source research using only public blockchain data and open source published reports.
+> Open-source research using only public blockchain data and published reports.
 > Attribution of the attackers relies on official sources; fund movements were verified on-chain by the author.
 
 ---
@@ -10,18 +10,18 @@
 ## 1. Summary
 [3–4 sentences: what happened, what you traced, your main finding.]
 
-On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was taken from a Bybit Ethereum cold wallet. The FBI attributed the theft to North Korea's "TraderTraitor" group. This report traces [N] hops from the receiving address `0x47666Fab8bd0Ac7003bce3f5C3585383F09486E2` across [X] wallets. **Main finding:** [e.g. funds were split into ~10,000 ETH tranches within X hours and reached THORChain by hop Y].
+On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was taken from a Bybit Ethereum cold wallet. The FBI attributed the theft to North Korea's "TraderTraitor" group. This report traces 2-3 hops from the receiving address `0x47666Fab8bd0Ac7003bce3f5C3585383F09486E2` across over 10 wallets. The findings include the fact that software engineering mechanisms were used to execute the attack that actually happened off-chain.
 
 ## 2. Scope
-- **Traced:** receiving address → [wallet A], [wallet B], [2–3] hops each
+- **Traced:** receiving address → 0x0fa09C3A328792253f8dee7116848723b72a6d2e, 0x0fa09C3A328792253f8dee7116848723b72a6d2e, [2–3] hops each
 - **Asset(s) followed:** [ETH only / ETH + stETH]
 - **Not traced:** Bitcoin side after bridging, other chains, the remaining split wallets, the attack mechanism itself
 
 ## 3. Methodology
-- **Tools:** Etherscan, [Breadcrumbs / MetaSleuth], Google Sheets
-- **Address selection:** [why these wallets, e.g. largest outflows]
+- **Tools:** Etherscan, MetaSleuth, Google Sheets
+- **Address selection:** largest outflows
 - **Verification:** each hop checked against the FBI PSA address list
-- **Source rating:** primary/official > expert firms > social media (unless confirmed on-chain)
+- **Source rating:** primary/official (the FBI, Bybit)> expert firms (Signia reports, Safe Wallet report) > AI (RAG)
 - **Excluded:** inbound dust and spam tokens sent to the exploiter address
 
 ## 4. Findings
@@ -69,7 +69,7 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 
 ## 8. Sources
 1. FBI, *North Korea Responsible for $1.5 Billion Bybit Hack*, PSA I-022625-PSA, 26 Feb 2025. https://www.ic3.gov/PSA/2025/PSA250226
-2. [ ]
+
 
 ## Appendix
 - Full transaction log: [`bybit_trace.csv`](bybit_trace.csv)
