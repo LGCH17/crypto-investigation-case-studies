@@ -64,6 +64,9 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 
 *Representative edges shown; full hop log in [bybit_trace.csv](bybit_trace.csv). Flow diagrams built in MetaSleuth; times in UTC.*
 
+**5.5 Funds frozen**
+On 22 February 2025 at 09:14 UTC, an administrative Exec Transaction moved the 15,000 cmETH from Exploiter 4 to the null address (0x000…000), permanently removing the tokens from circulation and placing them beyond the attacker's reach ([tx](https://etherscan.io/tx/FULL_HASH)).
+
 ## 6. Attribution assessment
 
 | Claim | Who says it | Supported by my trace? | Confidence |
