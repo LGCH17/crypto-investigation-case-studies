@@ -61,14 +61,15 @@ Fresh, single-purpose wallets at each stage
 
 Representative edges shown; full hop log in bybit_trace.csv. Flow diagrams built in MetaSleuth; times in UTC.
 
-6. Attribution assessment
+## 6. Attribution assessment
 
-Claim	Who says it	Supported by my trace?	Confidence
-North Korea (TraderTraitor) responsible	FBI [1]; Mandiant tracks the group as UNC4899 [5]	Partly: laundering pattern is consistent; identity relies on official attribution	High (official)
-~$1.5B stolen from a Bybit cold wallet	Bybit; FBI [1]	Yes: theft transactions observed 21 Feb 2025, 14:13–14:16 UTC	High
-Compromise via a manipulated Safe{Wallet} interface	Safe [4]; Sygnia [3]	No: off-chain, outside the scope of on-chain tracing	Medium–High (expert reports)
-Funds split into round tranches for laundering	This analysis	Yes: 90,000 ETH split into nine 10,000 ETH wallets in 48 seconds	High (verified on-chain)
-Funds later bridged to Bitcoin	Analytics firms and investigators [2][6][8]	Not traced in this slice	Medium (secondary sources)
+| Claim | Who says it | Supported by my trace? | Confidence |
+|---|---|---|---|
+| North Korea (TraderTraitor) responsible | FBI [1]; Mandiant tracks the group as UNC4899 [5] | Partly: laundering pattern is consistent; identity relies on official attribution | High (official) |
+| ~$1.5B stolen from a Bybit cold wallet | Bybit; FBI [1] | Yes: theft transactions observed 21 Feb 2025, 14:13–14:16 UTC | High |
+| Compromise via a manipulated Safe{Wallet} interface | Safe [4]; Sygnia [3] | No: off-chain, outside the scope of on-chain tracing | Medium–High (expert reports) |
+| Funds split into round tranches for laundering | This analysis | Yes: 90,000 ETH split into nine 10,000 ETH wallets in 48 seconds | High (verified on-chain) |
+| Funds later bridged to Bitcoin | Analytics firms and investigators [2][6][8] | Not traced in this slice | Medium (secondary sources) |
 
 7. Risk assessment: what an exchange or bank should do
 Screen deposits against the FBI-listed addresses and their downstream wallets
@@ -76,14 +77,20 @@ Monitor inflows from bridge routers and DEX aggregators shortly after major hack
 Red flags: round-number tranches (e.g. exactly 10,000 ETH), splitting within seconds, rapid swaps of liquid-staked tokens into ETH, consolidation followed by fan-out, and fresh single-purpose wallets
 Third-party risk: wallet and custody providers' off-chain infrastructure (developer machines, cloud environments, web interfaces) should be part of an exchange's vendor risk assessment
 
-8. Limitations
+9. Risk assessment: what an exchange or bank should do
+Screen deposits against the FBI-listed addresses and their downstream wallets
+Monitor inflows from bridge routers and DEX aggregators shortly after major hacks
+Red flags: round-number tranches (e.g. exactly 10,000 ETH), splitting within seconds, rapid swaps of liquid-staked tokens into ETH, consolidation followed by fan-out, and fresh single-purpose wallets
+Third-party risk: wallet and custody providers' off-chain infrastructure (developer machines, cloud environments, web interfaces) should be part of an exchange's vendor risk assessment
+
+10. Limitations
 Only a sample of the split wallets was traced; the remaining wallets were not followed.
 The trace stops before bridging; the Bitcoin side was not analysed.
 Wallet labels (Exploiter 1, 2, 5) come from Etherscan/MetaSleuth and were not independently verified.
 The description of the off-chain compromise relies entirely on published reports.
 USD values are approximate, based on prices at the time of the hack.
 
-9. Sources
+11. Sources
 FBI, North Korea Responsible for $1.5 Billion Bybit Hack, PSA I-022625-PSA, 26 Feb 2025. https://www.ic3.gov/PSA/2025/PSA250226
 Inca Digital, Bybit analysis. https://drive.google.com/file/d/1f6ue8r6f1nfHiZHECrQBtLoMNVfcEqMg/view
 Sygnia, Bybit investigation. https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/
