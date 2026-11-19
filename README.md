@@ -49,7 +49,7 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 ![Exploiter 2 to 5](Flow%20Diagram%20-%20Exploiter%202%20%E2%86%92%205%20the%20largest%20ETH%20transfer%20%2849%2C755%29.png)
 *Figure 3. Largest consolidation transfer: 49,755 ETH from Exploiter 2 to Exploiter 5 (part of ~98,049 ETH consolidated).*
 
-**5.4 Structured fan-out.** Exploiter 5 split 90,000 ETH into nine wallets of exactly 10,000 ETH each within 48 seconds.
+**5.4 Structured fan-out.** Exploiter 5 split 90,000 ETH into nine wallets of exactly 10,000 ETH each within 48 seconds. After the fan-out, approximately 8,049 ETH remained in Exploiter 5.
 
 ![Exploiter 5 fan-out](Flow%20Diagram%20-%20Exploiter%205%20%E2%86%92%2045%20one%20fan-out%20leg%20%2810%2C000%29.png)
 *Figure 4. One of nine fan-out legs: 10,000 ETH from Exploiter 5 to Exploiter 45. All nine legs completed within 48 seconds (see bybit_trace.csv).*
@@ -74,12 +74,31 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 | Funds split into round tranches for laundering | This analysis | Yes: 90,000 ETH split into nine 10,000 ETH wallets in 48 seconds | High (verified on-chain) |
 | Funds later bridged to Bitcoin | Analytics firms and investigators [2][6][8] | Not traced in this slice | Medium (secondary sources) |
 
-## 7. Risk assessment: what an exchange or bank should do
+## 7. Risk assessment
 
-- Screen deposits against the FBI-listed addresses and their downstream wallets
-- Monitor inflows from bridge routers and DEX aggregators shortly after major hacks
-- Red flags: round-number tranches (e.g. exactly 10,000 ETH), splitting within seconds, rapid swaps of liquid-staked tokens into ETH, consolidation followed by fan-out, and fresh single-purpose wallets
-- Third-party risk: wallet and custody providers' off-chain infrastructure (developer machines, cloud environments, web interfaces) should be part of an exchange's vendor risk assessment
+**Key risks shown by this case**
+
+| Risk | Evidence from my trace | Confidence |
+|---|---|---|
+| Response windows are minutes, not hours | First swap ~2 minutes after funds arrived; all staked tokens converted within 44 minutes; 9 × 10,000 ETH moved out in 48 seconds | High |
+| Attackers prioritise speed over price | stETH sold through DEX aggregators at a ~0.2–0.8% discount | High (on-chain) / Likely (intent) |
+| Blacklists lag | FBI list published 26 Feb, five days after the theft; it covers 8 wallets on my traced path | High |
+| Recovery depends on an issuer able to intervene | Only the cmETH was blocked and recovered; nothing else on my path | High |
+| Residual funds remain exposed | ~8,049 ETH left in Exploiter 5 after the fan-out | High |
+
+**Recommended controls**
+
+- **Custodians and exchanges (victim side):** verify multisig transactions independently of the web interface (decode on a hardware wallet or simulate before signing); alert on any transaction that changes a wallet's logic (e.g. a delegatecall), not only on transfers out.
+- **Receiving exchanges and VASPs:** screen deposits against published lists *and* analytics-firm clusters, since official lists arrive days later; match full addresses only, because lookalike "poisoning" addresses imitate FBI-listed wallets.
+- **Banks (the fiat off-ramp):** stolen crypto eventually has to become fiat. Apply EDD to inflows from OTC brokers or crypto platforms linked to the incident window, watch for large crypto-linked receipts into new or dormant accounts, and look for structuring that mirrors on-chain splitting.
+- **Token issuers:** maintain a tested ability to pause and recover tokens; the cmETH intervention shows it works.
+
+**Indicators to watch**
+- A new address deploys a contract, then runs small transactions against a multisig (18–20 Feb)
+- A small "test" transaction just before a large one (1 cmETH withdrawal, then 14,999)
+- Liquid-staking tokens rapidly swapped to ETH in round-number chunks
+- Consolidation followed by an equal, round-number fan-out (98k ETH → 9 × 10,000 ETH)
+- A large balance left dormant after laundering starts
 
 ## 8. Limitations
 
