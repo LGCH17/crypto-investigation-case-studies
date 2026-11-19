@@ -91,7 +91,9 @@ The description of the off-chain compromise relies entirely on published reports
 USD values are approximate, based on prices at the time of the hack.
 
 11. Sources
-FBI, North Korea Responsible for $1.5 Billion Bybit Hack, PSA I-022625-PSA, 26 Feb 2025. https://www.ic3.gov/PSA/2025/PSA250226
+
+FBI, North Korea Responsible for $1.5 Billion Bybit Hack, PSA I-022625-PSA, 26 Feb 2025. 
+https://www.ic3.gov/PSA/2025/PSA250226
 
 Inca Digital, Bybit analysis. https://drive.google.com/file/d/1f6ue8r6f1nfHiZHECrQBtLoMNVfcEqMg/view
 
@@ -107,7 +109,8 @@ Etherscan, test-run transactions. https://etherscan.io/txs?a=0x19C6876E978D9F128
 
 Arkham Intelligence on X. https://x.com/arkham/status/1893033424224411885
 
-Breadcrumbs, The Bybit Hack: How $1.46 Billion in Crypto Was Stolen. https://learn.breadcrumbs.app/posts/the-bybit-hack-how-1-46-billion-in-crypto-was-stolen-a-breakdown-of-the-largest-crypto-heist
+Breadcrumbs, The Bybit Hack: How $1.46 Billion in Crypto Was Stolen. 
+https://learn.breadcrumbs.app/posts/the-bybit-hack-how-1-46-billion-in-crypto-was-stolen-a-breakdown-of-the-largest-crypto-heist
 
 Appendix
 Full transaction log: bybit_trace.csv
