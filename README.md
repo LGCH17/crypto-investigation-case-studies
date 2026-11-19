@@ -40,26 +40,21 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 
 **5.2 Staked tokens moved and swapped.** Stolen stETH and mETH were moved from Exploiter 1 to Exploiter 2 on 21 February 2025 and swapped to ETH through DEX aggregators. The largest single swap converted 25,000 stETH to ETH via ParaSwap. Some swaps began before all stolen funds had been received, showing a pre-planned process.
 
-![Exploiter 1 to 2](fig1_exploiter1_to_2.png)
-*Figure 1. Stolen stETH and mETH moved from Exploiter 1 to Exploiter 2, 21 Feb 2025 (UTC).*
+![Exploiter 1 to 2](Flow%20Diagram%20-%20Exploiter%201%20%E2%86%92%202%20stETH%20move%20and%20mETH%20move.png)
 
-![Largest swap](fig4_largest_swap.png)
-*Figure 2. Largest single swap: 25,000 stETH to ETH via ParaSwap.*
+![Largest swap](Flow%20Diagram%20-%20Largest%20swap%20stETH%20to%20ETH%20via%20ParaSwap%20%2825%2C000%29.png)
 
 **5.3 Consolidation.** Swap proceeds of approximately 98,049 ETH were consolidated into Exploiter 5.
 
-![Exploiter 2 to 5](fig2_exploiter2_to_5.png)
-*Figure 3. Swap proceeds (~98,049 ETH) consolidated into Exploiter 5.*
+![Exploiter 2 to 5](Flow%20Diagram%20-%20Exploiter%202%20%E2%86%92%205%20the%20largest%20ETH%20transfer%20%2849%2C755%29.png)
+*Figure 3. Largest consolidation transfer: 49,755 ETH from Exploiter 2 to Exploiter 5 (part of ~98,049 ETH consolidated).*
 
 **5.4 Structured fan-out.** Exploiter 5 split 90,000 ETH into nine wallets of exactly 10,000 ETH each within 48 seconds.
 
-![Exploiter 5 fan-out](fig3_exploiter5_fanout.png)
-*Figure 4. Exploiter 5 splits 90,000 ETH into nine wallets of 10,000 ETH within 48 seconds.*
+![Exploiter 5 fan-out](Flow%20Diagram%20-%20Exploiter%205%20%E2%86%92%2045%20one%20fan-out%20leg%20%2810%2C000%29.png)
+*Figure 4. One of nine fan-out legs: 10,000 ETH from Exploiter 5 to Exploiter 45. All nine legs completed within 48 seconds (see bybit_trace.csv).*
 
-**5.5 cmETH.** 15,000 cmETH was sent to the null address on 22 February 2025 at 09:14:47 UTC. The reason for this transfer is not confirmed in this analysis.
-
-![cmETH to null address](fig5_cmeth_burn.png)
-*Figure 5. 15,000 cmETH sent to the null address, 22 Feb 2025 09:14:47 UTC.*
+![cmETH to null address](Flow%20Diagram%20-%20The%20burn%20%28Exploiter%204%20%E2%86%92%20null%29%2C%20Exploiter%204.png)
 
 **Patterns observed**
 - Speed: swaps began before all stolen funds had arrived; fan-out completed within seconds
@@ -100,7 +95,7 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 2. Inca Digital, Bybit analysis. https://drive.google.com/file/d/1f6ue8r6f1nfHiZHECrQBtLoMNVfcEqMg/view
 3. Sygnia, Bybit investigation. https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/
 4. Safe, incident report. https://x.com/safe/article/1897663514975649938
-5. Mandiant, reporting on UNC4899. ADD LINK
+5. Mandiant, reporting on UNC4899. (https://www.sygnia.co/blog/sygnia-investigation-bybit-hack/)
 6. ZachXBT on X. https://x.com/zachxbt/status/1893211577836302365
 7. Etherscan, test-run transactions. https://etherscan.io/txs?a=0x19C6876E978D9F128147439ac4cd9EA2582cd141
 8. Arkham Intelligence on X. https://x.com/arkham/status/1893033424224411885
