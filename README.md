@@ -24,11 +24,12 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 
 ## 3. Methodology
 
-- **Tools:** Etherscan (transactions, internal transactions, token transfers), MetaSleuth (flow visualisation), Google Sheets (hop log)
+- **Tools:** Etherscan (transactions, internal transactions, token transfers), Etherscan API, MetaSleuth (flow visualisation), Google Sheets (hop log)
 - **Starting point:** receiving address taken from the FBI PSA [1] and confirmed on Etherscan by its label and activity on 21 February 2025
 - **Address selection:** largest outflows first; wallets showing repeated patterns were sampled rather than all traced
 - **Source rating:** primary/official sources (FBI, Bybit) ranked above expert reports (Sygnia, Safe, Mandiant, analytics firms), which rank above independent investigators on social media. Claims were confirmed on-chain wherever possible
 - **Excluded:** inbound dust, spam tokens and messages sent to the exploiter address
+- Transfers were collected manually from Etherscan and then independently reproduced with a Python script against the Etherscan V2 API (etherscan_collect.py), which matched the manual reconciliation.
 
 ## 4. Background: how the theft happened (from published reports, not traced)
 
