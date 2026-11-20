@@ -16,7 +16,7 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 - **Wallets traced (labels as shown on Etherscan/MetaSleuth):**
   - Exploiter 1 (receiving address): `0x47666Fab8bd0Ac7003bce3f5C3585383F09486E2`
   - Exploiter 2: `0x0fa09C3A328792253f8dee7116848723b72a6d2e`
-  - Exploiter 5: `ADD FULL ADDRESS`
+  - Exploiter 5: `0xdD90071D52F20e85c89802e5Dc1eC0A7B6475f92`
   - Nine 10,000 ETH fan-out wallets: listed in `bybit_trace.csv`
 - **Assets followed:** ETH, stETH, mETH, cmETH
 - **Depth:** up to three hops from the receiving address
