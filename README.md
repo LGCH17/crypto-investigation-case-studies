@@ -31,6 +31,7 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 - **Excluded:** inbound dust, spam tokens and messages sent to the exploiter address
 - Transfers were collected manually from Etherscan and then independently reproduced with a Python script against the Etherscan V2 API (etherscan_collect.py), which matched the manual reconciliation.
 - The FBI’s TraderTraitor address list was collected with a Python scraper (scrape_fbi.py, requests + BeautifulSoup), validated against the expected count of 51, saved with its source and collection time, and used by etherscan_collect.py for full-address screening.
+- Automated outputs were validated against known values: the scraper against the FBI notice’s 51 addresses, and the Etherscan script against my manual wallet reconciliation.
 
 ## 4. Background: how the theft happened (from published reports, not traced)
 
