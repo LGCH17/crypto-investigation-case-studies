@@ -32,6 +32,7 @@ On 21 February 2025, approximately $1.5B in ETH and liquid-staked ETH tokens was
 - Transfers were collected manually from Etherscan and then independently reproduced with a Python script against the Etherscan V2 API (etherscan_collect.py), which matched the manual reconciliation.
 - The FBI’s TraderTraitor address list was collected with a Python scraper (scrape_fbi.py, requests + BeautifulSoup), validated against the expected count of 51, saved with its source and collection time, and used by etherscan_collect.py for full-address screening.
 - Automated outputs were validated against known values: the scraper against the FBI notice’s 51 addresses, and the Etherscan script against my manual wallet reconciliation.
+- The “In FBI list?” definition from my last message.
 
 ## 4. Background: how the theft happened (from published reports, not traced)
 
@@ -69,6 +70,9 @@ According to the Safe and Sygnia investigations [3][4], the compromise began off
 
 **5.5 Funds frozen**
 On 22 February 2025 at 09:14 UTC, an administrative Exec Transaction moved the 15,000 cmETH from Exploiter 4 to the null address (0x000…000), permanently removing the tokens from circulation and placing them beyond the attacker's reach ([tx](https://etherscan.io/tx/FULL_HASH)).
+
+**6 .PY Graph
+![Wallet network](wallet_graph.png)
 
 ## 6. Attribution assessment
 
